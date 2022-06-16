@@ -1,0 +1,11 @@
+architerktura MVC = model view controler
+
+Django má ale MVT (někdy i MTV)
+
+model je stále model, template je místo view
+a view je místo controlleru
+
+směrovač, router
+
+databáze:
+2 typy: SQL a NoSQL
