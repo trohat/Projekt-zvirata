@@ -20,5 +20,17 @@
     <p>{{ slovo|add:" a šimpanz" }}</p>
     <p>{{ slovo|make_list }}</p>
     <p>{{ slovo.3 }}</p>
+    <p>{{ slovo|capfirst }}</p>
+    <p>Délka slova je {{ slovo|length }}.</p>
+    <p>Celý seznam je {{ seznam_slov }}.</p>
+    <p>První prvek seznamu je {{ seznam_slov|first }}.</p>
+    <p>Poslední prvek seznamu je {{ seznam_slov|last }}.</p> 
+    <p>Prostřední prvek seznamu je {{ seznam_slov.1 }}.</p> 
+    <p>Dnes bude slunečno: {{ pravda|yesno:"ano,ne" }}</p>
+    <p>Zítra bude {{ lez|yesno:"slunečno,deštivo" }}</p>
+    <p>V zoo máme {{ pocet_orangutanu }} orangutan{{ pocet_orangutanu|pluralize:"a,ů" }}.</p>
+
+
+
 </body>
 </html>

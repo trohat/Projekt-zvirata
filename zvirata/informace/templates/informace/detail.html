@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail zvířete {{ zvire }}</title>
+</head>
+<body>
+    <p>Tohle je stránka o zvířeti jménem {{ zvire|upper }}.</p>
+    <p>{{ popis }}</p>
+
+    <p>Klikni zde pro <a href="{% url "seznam" %}">seznam zvířat.</a></p>
+</body>
+</html>

@@ -6,7 +6,7 @@ from django.shortcuts import render
 slovnik = {
     "pes": "Pes štěká.",
     "kočka": "Kočka má devět životů.",
-    "chameleon": "Chameleon umí měnit barvu",
+    "chameleon": "Chameleon umí měnit barvu.",
     "tučňák": "Tučňák má rád zimu.",
     "šimpanz": "Šimpanz jí banány.",
     "slon": "Slon je velký.",
@@ -34,29 +34,25 @@ def zirafa(request):
         "vek": 7,
         "veta": "ahoj jak se máš",
         "slovo": "orangutan",
+        "pocet_orangutanu": 5,
         "cislo": 56,
-        "cislo_jako_string": "56"
+        "cislo_jako_string": "56",
+        "pravda": True,
+        "lez": False,
+        "seznam_slov": ["jablko", "hruška", "pomeranč"]
     })
 
 def seznam_zvirat(request):
-    response = "<h1>Tohle je seznam všech zvířat v naší aplikaci</h1>"
-    response += "<ol>"
-    for zvire, popis in slovnik.items():
-        response += "<li>"
-        response += f"<b>{zvire.capitalize()}</b>"
-        response += f" - {popis}"
-        response += "</li>"
-    response += "</ol>"
-    response += "<p>&copy; Moje aplikace."
-    return HttpResponse(response)
+    return render(request, "informace/seznam.html", {
+        "seznam": slovnik
+    })
 
 def detail_zvirete(request, zvire):
     try:
         info = slovnik[zvire]
     except:
         raise Http404("Stránka neexistuje")
-    response = f"<p>Hledáš informace o zvířeti {zvire}.</p>"
-    response += f"<p>Tady jsou: {info}</p>"
-    return HttpResponse(response)
-
-
+    return render(request, "informace/detail.html", {
+        "zvire": zvire,
+        "popis": info
+    })
