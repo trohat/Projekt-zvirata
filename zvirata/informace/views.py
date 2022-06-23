@@ -18,19 +18,25 @@ slovnik = {
 
 # tomuhle se říká view funkce
 def index(request):
-    odpoved = "<h1>Tohle je obsah.</h1>"
-    odpoved += "<p>Tohle je odpověď na požadavek, který byl poslán "
-    odpoved += "pomocí metody "
-    odpoved += request.method
-    odpoved += ".</p>"
-    odpoved += "<p>To sme chytrý, co? :) :) :) 🦉</p>"
-    return HttpResponse(odpoved)
+    return render(request, "informace/index.html")
 
 def slon(request):
-    return HttpResponse("<p>Tohle je povídání o slonovi.</p>")
+    context = {
+        "jmeno": "Jumbo",
+        "barva": "modrou"
+    }
+    return render(request, "informace/slon.html", context)
 
 def zirafa(request):
-    return HttpResponse("Tohle je zirafa. <p>Haf haf</p>")
+    return render(request, "informace/zirafa.html", {
+        "jmeno": "Amálka",
+        "jídlo": "špenát",
+        "vek": 7,
+        "veta": "ahoj jak se máš",
+        "slovo": "orangutan",
+        "cislo": 56,
+        "cislo_jako_string": "56"
+    })
 
 def seznam_zvirat(request):
     response = "<h1>Tohle je seznam všech zvířat v naší aplikaci</h1>"
