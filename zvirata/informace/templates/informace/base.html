@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "informace/style.css" %}">
+    <title>{% block title %}Moje aplikace zvířata{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <p>Tato stránka je zatím prázdná.</p>
+    {% endblock %}
+    <p>Klikni zde pro <a href="{% url "seznam" %}">seznam zvířat</a></p>
+    <p>Klikni zde pro <a href="{% url 'index' %}">úvodní stránku</a></p>
+    <p>Klikni zde pro odkaz na pracovní stránku <a href="{% url 'slon' %}">SLON</a></p>
+    <p>Klikni zde pro odkaz na pracovní stránku <a href="{% url 'zirafa' %}">ŽIRAFA</a></p>
+    {% block footer %}{% endblock %}
+</body>
+</html>

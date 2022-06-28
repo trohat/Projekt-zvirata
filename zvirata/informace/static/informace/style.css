@@ -1,0 +1,6 @@
+h1 {
+    border-bottom: red dashed 5px;
+    background-color: coral;
+}
+
+/* tohle je statický soubor, protože jeho obsah se nemění */
