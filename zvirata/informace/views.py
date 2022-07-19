@@ -23,7 +23,8 @@ def index(request):
 def slon(request):
     context = {
         "jmeno": "Jumbo",
-        "barva": "modrou"
+        "barva": "modrou",
+        "je_velky": False
     }
     return render(request, "informace/slon.html", context)
 

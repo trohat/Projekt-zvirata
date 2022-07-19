@@ -9,6 +9,28 @@
 <body>
     <p>Tohle je povídání o slonovi.</p>
     <p>Slon se jmenuje {{ jmeno }}.</p>
-    <p>Slon má barvu {{ barva }}.</p>
+    <p>Slon má barvu {{ barva }}. </p>
+    {% if je_velky %}
+        <p>Slon je skutečně obrovský!</p>
+    {% else %}
+        <p>Slon je docela malý.</p>
+    {% endif %}
+    {% if jmeno|length > 10 %}
+        <p>Slon má fakt hodně dlouhé jméno.</p>
+    {% elif jmeno|length > 5 %}
+        <p>Slon má středně dlouhé jméno.</p>
+    {% else %}
+        <p>Slon má docela krátké jméno.</p>
+    {% endif %}
+
+    {% comment %}
+    Tajné heslo je orangutan.
+    Tohle je DTL komentář.
+    DTL = Django template language
+    {% endcomment %}
+
+    <!--  Tajné heslo je gibon.
+    Tohle je HTML komentář.
+    -->
 </body>
 </html>
